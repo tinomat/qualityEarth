@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>title</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Choise a quality to look at the earth</h1>
+            <div class="img">
+                <img />
+            </div>
+            <div class="options-container">
+                <select id="options">
+                    <option value="" selected disabled>Choose</option>
+                    <option value="1">144p</option>
+                    <option value="2">480p</option>
+                    <option value="3">720p</option>
+                    <option value="4">1080p</option>
+                </select>
+            </div>
+        </div>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                font-size: 62.5%;
+                font-family: monospace;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            .wrapper {
+                display: grid;
+                place-content: center;
+                min-height: 100dvh;
+                text-align: center;
+            }
+            .img {
+                width: 50rem;
+                height: 50rem;
+                margin: 0 auto;
+                margin-block: 4rem;
+            }
+            .img img {
+                max-width: 100%;
+                object-fit: cover;
+            }
+            #options {
+                font-size: 3rem;
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+        </style>
+        <script>
+            const select = document.querySelector("#options");
+            const img = document.querySelector(".img img");
+            select.addEventListener("input", () => {
+                img.src = `src/img/${select.value}.png`;
+            });
+        </script>
+    </body>
+</html>
